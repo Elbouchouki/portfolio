@@ -1,4 +1,3 @@
 import Heading from "./heading";
-import Summary from "./summary";
-
-export { Heading, Summary };
+import HeadingSection from "./heading-section";
+export { Heading, HeadingSection };

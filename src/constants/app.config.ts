@@ -9,5 +9,5 @@ export const appConfig = {
   picture: "https://media.licdn.com/dms/image/D4E03AQF2V2pByQaSTQ/profile-displayphoto-shrink_800_800/0/1686001861776?e=2147483647&v=beta&t=TeiVvhj6cjnVnewX-_mxQfC45UtYnzG0VTQ8SLGtRkk",
   socials: {
     github: "https://github.com/Elbouchouki"
-  }
+  },
 }
