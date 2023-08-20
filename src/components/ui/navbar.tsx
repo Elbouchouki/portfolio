@@ -9,17 +9,17 @@ import { appConfig } from "@/constants/app.config"
 
 const Navbar = () => {
   return (
-    <header className="fixed top-0 flex justify-center w-full backdrop-blur-2xl ">
+    <header className="fixed top-0 z-50 flex justify-center w-full backdrop-blur-xl">
       <div className="flex items-center w-full max-w-3xl px-4 py-1 space-x-10 h-14">
-        <Link href="/" className="group flex items-center cursor-pointer">
+        <Link href="/" className="flex items-center cursor-pointer group">
           <Image
             src="/logo.png"
             alt="Logo"
-            className="relative w-10 h-10 rounded-sm group-hover:scale-105 group-hover:rotate-6 transition-all"
+            className="relative w-10 h-10 transition-all rounded-sm group-hover:scale-105 group-hover:rotate-6"
             width={100}
             height={100}
           />
-          <h1 className="ml-1 sm:text-xl text-md font-bold text-gray-700 dark:text-gray-200 font-main">
+          <h1 className="ml-1 font-bold text-gray-700 sm:text-xl text-md dark:text-gray-200 font-main">
             {appConfig.name}
           </h1>
         </Link>

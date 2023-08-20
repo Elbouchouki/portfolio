@@ -26,7 +26,7 @@ const Heading = () => {
       <div className="flex justify-center order-last mt-4 sm:mt-0 sm:order-1">
         <Dialog>
           <DialogTrigger>
-            <Avatar className="rounded-lg w-36 h-36">
+            <Avatar className="rounded-lg w-36 h-36 hover:scale-105 hover:rotate-2 delay-100 transition-all">
               <AvatarImage src={appConfig.picture} />
               <AvatarFallback className="rounded-lg">
                 <Skeleton className="w-full h-full" />
