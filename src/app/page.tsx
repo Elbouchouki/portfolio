@@ -1,10 +1,14 @@
 import { HeadingSection, Heading } from "@/components/about";
+import GwenodIcon from "@/components/logo/gwenod";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import BioItem from "@/components/ui/bio-item";
 import { Button } from "@/components/ui/button";
 import DownloadButton from "@/components/ui/download-button";
+import { Skeleton } from "@/components/ui/skeleton";
+import WorkItem from "@/components/ui/work-item";
 import { appConfig } from "@/constants/app.config";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
-import { Facebook, FacebookIcon, GithubIcon, LucideFacebook } from "lucide-react";
+import { LucideFacebook } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -79,6 +83,56 @@ export default function Home() {
                 redownloadText="Redownload resume"
               />
             </div>
+          </div>
+        </HeadingSection>
+        <HeadingSection title="Work">
+          <div className="flex flex-col my-2 space-y-4">
+            <WorkItem
+              company="GWENOD"
+              jobTitle="Liferay Developer"
+              from="July 2021"
+              to="Present"
+              badge="Internship"
+              href="https://gwenod.ma/"
+              icon={
+                <Avatar className="w-16 h-16 p-2 transition-all delay-100 rounded-lg hover:p-3 ">
+                  <GwenodIcon className="w-full h-full aspect-square" />
+                  <AvatarFallback className="rounded-lg">
+                    <Skeleton className="w-full h-full" />
+                  </AvatarFallback>
+                </Avatar>
+              }
+            />
+            <WorkItem
+              company="MOAJ"
+              jobTitle="Full-stack Developer"
+              from="July 2022"
+              href="https://moaj.info/"
+              badge="Internship"
+              icon={
+                <Avatar className="w-16 h-16 p-2 transition-all delay-100 rounded-lg hover:p-3 ">
+                  <AvatarImage src="/work/moaj.svg" />
+                  <AvatarFallback className="rounded-lg">
+                    <Skeleton className="w-full h-full" />
+                  </AvatarFallback>
+                </Avatar>
+              }
+            />
+            <WorkItem
+              company="Flouka"
+              jobTitle="Mobile Developer"
+              from="June 2021"
+              badge="Internship"
+              href="https://moaj.info/"
+              icon={
+                <Avatar className="w-16 h-16 p-2 transition-all delay-100 rounded-lg hover:p-3 ">
+                  <AvatarImage src="/work/flouka.svg" />
+                  <AvatarFallback className="rounded-lg">
+                    <Skeleton className="w-full h-full" />
+                  </AvatarFallback>
+                </Avatar>
+              }
+            />
           </div>
         </HeadingSection>
         <HeadingSection title="I ♥">
