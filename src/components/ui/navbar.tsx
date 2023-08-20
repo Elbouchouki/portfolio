@@ -28,9 +28,9 @@ const Navbar = () => {
             {
               navs.filter(nav => !nav.mobileOnly).map((item, index) => (
                 <li key={index}>
-                  <a href={item.href} className="text-gray-700 hover:underline hover:text-gray-950 dark:text-gray-200 dark:hover:text-white">
+                  <Link href={item.href} className="text-gray-700 hover:underline hover:text-gray-950 dark:text-gray-200 dark:hover:text-white">
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))
             }

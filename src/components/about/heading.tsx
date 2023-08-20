@@ -3,20 +3,21 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { appConfig } from "@/constants/app.config"
 import Link from "next/link"
 
-
-
 import {
   Dialog,
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog"
 import DownloadButton from "../ui/download-button"
+import { cn } from "@/lib/utils"
 
+interface HeadingSectionProps {
+  className?: string
+}
 
-
-const Heading = () => {
+const Heading = ({ className }: HeadingSectionProps) => {
   return (
-    <div className="flex flex-col my-3 sm:items-center sm:flex-row sm:space-x-4">
+    <div className={cn("flex flex-col my-3 sm:items-center sm:flex-row sm:space-x-4", className)}>
       <div className="flex justify-center order-last mt-4 sm:mt-0 sm:order-1">
         <Dialog>
           <DialogTrigger>

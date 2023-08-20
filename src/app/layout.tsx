@@ -59,7 +59,7 @@ export default function RootLayout({
               <Footer />
             </div>
           </main>
-          <Analytics />
+          <Analytics mode='production' />
         </ThemeProvider>
       </body>
     </html>
