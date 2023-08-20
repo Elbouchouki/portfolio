@@ -3,6 +3,7 @@ import { Josefin_Sans, Maven_Pro } from 'next/font/google'
 import { ThemeProvider } from "@/components/provider/theme-provider"
 import Navbar from '@/components/ui/navbar'
 import { cn } from '@/lib/utils'
+import Footer from '@/components/ui/footer'
 const mainFont = Josefin_Sans({
   subsets: ["latin"],
   variable: "--font-main",
@@ -28,11 +29,13 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <main className="flex justify-center mt-14">
+          <main className="flex flex-col items-center mt-14">
             <div className="w-full max-w-lg px-4">
               {children}
+              <Footer />
             </div>
           </main>
+
         </ThemeProvider>
       </body>
     </html>
