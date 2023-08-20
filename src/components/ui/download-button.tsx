@@ -1,11 +1,29 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { Button, ButtonProps } from "@/components/ui/button"
 import { CheckCircle2Icon, DownloadIcon } from "lucide-react"
 import { useEffect, useState } from "react";
 import useDownloader from "react-use-downloader";
 
-const DownloadResumeButton = () => {
+
+interface DownloadButtonProps extends ButtonProps {
+  filepath: string;
+  filename: string;
+  defaultText: string;
+  downloadedText: string;
+  redownloadText: string;
+
+}
+
+const DownloadButton = ({
+  filepath,
+  filename,
+  defaultText,
+  downloadedText,
+  redownloadText,
+  className, variant, size,
+  ...props
+}: DownloadButtonProps) => {
 
   const { download } = useDownloader();
 
@@ -13,9 +31,9 @@ const DownloadResumeButton = () => {
 
   const [downloadCount, setDownloadCount] = useState(0)
 
-  const downloadResume = () => {
+  const handleDownload = () => {
     if (downloaded) return
-    download("/resume/resume_eng.pdf", "elbouchouki-resume.pdf").then(() => {
+    download(filepath, filename).then(() => {
       setDownloaded(true)
       setDownloadCount(downloadCount + 1)
     })
@@ -30,22 +48,26 @@ const DownloadResumeButton = () => {
   }, [downloaded]);
 
   return (
-    <Button disabled={downloaded} onClick={() => downloadResume()}>
+    <Button
+      variant={variant}
+      size={size}
+      className={className}
+      disabled={downloaded} onClick={() => handleDownload()}
+      {...props}
+    >
       {downloaded ?
         <>
           <CheckCircle2Icon className="w-4 h-4 mr-2 text-green-500" />
-          Resume downloaded
+          {downloadedText}
         </> :
         <>
           <DownloadIcon className="w-4 h-4 mr-2 " />
           {
-            downloadCount === 0 ?
-              "Download full resume" :
-              "Redownload resume"
+            downloadCount === 0 ? defaultText : redownloadText
           }
         </>
       }
     </Button>
   )
 }
-export default DownloadResumeButton
+export default DownloadButton
