@@ -5,6 +5,7 @@ import BioItem from "@/components/ui/bio-item";
 import { Button } from "@/components/ui/button";
 import DownloadButton from "@/components/ui/download-button";
 import { Skeleton } from "@/components/ui/skeleton";
+import SocialIcons from "@/components/ui/social-icons";
 import WorkItem from "@/components/ui/work-item";
 import { appConfig } from "@/constants/app.config";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
@@ -141,26 +142,7 @@ export default function Home() {
           </p>
         </HeadingSection>
         <HeadingSection title="Socials">
-          <div className="flex flex-col justify-center space-y-2 sm:space-y-0 sm:space-x-4 sm:flex-row">
-            <Link href={appConfig.socials.github} target="_blank">
-              <Button variant="ghost">
-                <GitHubLogoIcon className="w-4 h-4 mr-2" />
-                Github
-              </Button>
-            </Link>
-            <Link href={appConfig.socials.facebook} target="_blank">
-              <Button variant="ghost">
-                <LucideFacebook className="w-4 h-4 mr-2" />
-                Facebook
-              </Button>
-            </Link>
-            <Link href={appConfig.socials.linkedin} target="_blank">
-              <Button variant="ghost">
-                <LinkedInLogoIcon className="w-4 h-4 mr-2" />
-                Linkedin
-              </Button>
-            </Link>
-          </div>
+          <SocialIcons />
         </HeadingSection>
       </div>
     </main>

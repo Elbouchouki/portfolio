@@ -20,7 +20,7 @@ const Heading = () => {
       <div className="flex justify-center order-last mt-4 sm:mt-0 sm:order-1">
         <Dialog>
           <DialogTrigger>
-            <Avatar className="transition-all delay-100 rounded-lg w-36 h-36 hover:scale-105 rotate-2 hover:-rotate-2">
+            <Avatar className="transition-all delay-100 rotate-0 rounded-lg w-36 h-36 hover:scale-105 sm:rotate-2 hover:-rotate-2">
               <AvatarImage src={appConfig.picture} />
               <AvatarFallback className="rounded-lg">
                 <Skeleton className="w-full h-full" />
