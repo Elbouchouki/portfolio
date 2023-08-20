@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/components/provider/theme-provider"
 import Navbar from '@/components/ui/navbar'
 import { cn } from '@/lib/utils'
 import Footer from '@/components/ui/footer'
+import { Metadata } from 'next'
+
 const mainFont = Josefin_Sans({
   subsets: ["latin"],
   variable: "--font-main",
@@ -13,6 +15,27 @@ const bodyFont = Maven_Pro({
   subsets: ["latin"],
   variable: "--font-body",
 })
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Elbouchouki Ahmed',
+    default: 'Elbouchouki Ahmed',
+  },
+  icons: [
+    {
+      url: '/favicon.ico',
+      rel: 'icon',
+    },
+    {
+      url: '/favicon.ico',
+      rel: 'shortcut icon',
+    },
+    {
+      url: '/favicon.ico',
+      rel: 'apple-touch-icon',
+    },
+  ],
+}
 
 export default function RootLayout({
   children,
