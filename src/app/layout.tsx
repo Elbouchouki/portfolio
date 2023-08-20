@@ -5,6 +5,7 @@ import Navbar from '@/components/ui/navbar'
 import { cn } from '@/lib/utils'
 import Footer from '@/components/ui/footer'
 import { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react'
 
 const mainFont = Josefin_Sans({
   subsets: ["latin"],
@@ -58,7 +59,7 @@ export default function RootLayout({
               <Footer />
             </div>
           </main>
-
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
