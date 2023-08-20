@@ -3,11 +3,13 @@ import React from 'react';
 interface HeadingSectionProps {
   title: string;
   children?: React.ReactNode;
+  className?: string;
 }
 
 const HeadingSection = ({
   title,
   children,
+  className
 }: HeadingSectionProps) => {
   return (
     <div className="flex flex-col" >
@@ -16,7 +18,7 @@ const HeadingSection = ({
           {title}
         </h1>
       </div>
-      <div>
+      <div className={className}>
         {children}
       </div>
     </div>
