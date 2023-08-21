@@ -57,7 +57,7 @@ const Heading = ({ className }: HeadingSectionProps) => {
           {appConfig.currentRole.name}
         </h3>
         {appConfig.currentRole.showLocation &&
-          <span>{` @ `}<Link target="_blank" className="font-semibold text-blue-600 dark:text-blue-300 hover:underline" href={appConfig.currentRole.link}>{appConfig.currentRole.location}</Link></span>
+          <span>{` @ `}<Link target="_blank" className="font-semibold text-link hover:underline" href={appConfig.currentRole.link}>{appConfig.currentRole.location}</Link></span>
         }
       </div>
     </div>

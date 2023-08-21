@@ -36,12 +36,12 @@ export default function Home() {
       <div className="flex flex-col space-y-8">
         <HeadingSection title="Summary" className="text-justify text-gray-700 dark:text-gray-200 indent-8">
           I am a software engineering student at <Link
-            className="font-semibold text-blue-600 dark:text-blue-300 hover:underline"
+            className="font-semibold text-link hover:underline"
             href="https://www.enset-media.ac.ma/"
             target="_blank">
             ENSET Mohammedia
           </Link>, I am passionate about web development and I am always looking to learn new technologies and improve my skills. I am a currently a liferay developer at <Link
-            className="font-semibold text-blue-600 dark:text-blue-300 hover:underline"
+            className="font-semibold text-link hover:underline"
             href="https://www.gwenod.ma/"
             target="_blank">
             GWENOD
@@ -53,7 +53,7 @@ export default function Home() {
           </BioItem>
           <BioItem date="2021" >
             Completed Advanced Technician Certificate in Information Systems Development Completed Advanced Technician Certificate in Information Systems Development at <Link
-              className="font-semibold text-blue-600 dark:text-blue-300 hover:underline"
+              className="font-semibold text-link hover:underline"
               href="https://btshassan2.com/"
               target="_blank">
               Hassan 2 Qualifying High School
@@ -61,7 +61,7 @@ export default function Home() {
           </BioItem>
           <BioItem date="2024" >
             Will graduate from <Link
-              className="font-semibold text-blue-600 dark:text-blue-300 hover:underline"
+              className="font-semibold text-link hover:underline"
               href="https://www.enset-media.ac.ma/"
               target="_blank">
               ENSET Mohammedia
@@ -102,7 +102,7 @@ export default function Home() {
             badge="Internship"
             icon={
               <Avatar className="w-16 h-16 p-2 transition-all delay-100 rounded-lg hover:p-3 ">
-                <AvatarImage src="/work/moaj.svg" />
+                <AvatarImage src="/logo/moaj.svg" />
                 <AvatarFallback className="rounded-lg">
                   <Skeleton className="w-full h-full" />
                 </AvatarFallback>
@@ -117,7 +117,7 @@ export default function Home() {
             href="https://moaj.info/"
             icon={
               <Avatar className="w-16 h-16 p-2 transition-all delay-100 rounded-lg hover:p-3 ">
-                <AvatarImage src="/work/flouka.svg" />
+                <AvatarImage src="/logo/flouka.svg" />
                 <AvatarFallback className="rounded-lg">
                   <Skeleton className="w-full h-full" />
                 </AvatarFallback>
