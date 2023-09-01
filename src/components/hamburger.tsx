@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { navs } from "@/constants/nav.config"
 import Link from "next/link"
+import { appConfig } from "@/constants/app.config"
+import { Icons } from "./Icons"
 
 const Hamburger = () => {
   return (
@@ -21,7 +23,7 @@ const Hamburger = () => {
           <span className="sr-only">Toggle Menu</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent className="md:hidden" align="end">
         {
           navs.map((item, index) => (
             <Link key={index} href={item.href}>
@@ -31,6 +33,12 @@ const Hamburger = () => {
             </Link>
           ))
         }
+        <Link className="sm:hidden" href={appConfig.socials.github} target="_blank" >
+          <DropdownMenuItem className="cursor-pointer justify-between flex flex-row" >
+            <span className="underline">Github</span>
+            <Icons.share className="h-4 w-4" />
+          </DropdownMenuItem>
+        </Link>
       </DropdownMenuContent>
     </DropdownMenu>
   )

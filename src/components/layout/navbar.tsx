@@ -1,11 +1,11 @@
 import Image from "next/image"
-import Hamburger from "./hamburger"
-import { ThemeToggleButton } from "./theme-toggle-button"
+import Hamburger from "../hamburger"
+import { ThemeToggleButton } from "../theme-toggle-button"
 import { navs } from "@/constants/nav.config"
 import { Button } from "@/components/ui/button"
-import { GitHubLogoIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 import { appConfig } from "@/constants/app.config"
+import { Icons } from "../Icons"
 
 const Navbar = () => {
   return (
@@ -34,12 +34,13 @@ const Navbar = () => {
                 </li>
               ))
             }
+
           </ul>
         </nav>
         <div className="flex justify-end space-x-2 grow">
-          <Link href={appConfig.socials.github} target="_blank">
+          <Link className="hidden sm:flex" href={appConfig.socials.github} target="_blank">
             <Button variant="outline" size="icon">
-              <GitHubLogoIcon className="h-[1.2rem] w-[1.2rem]" />
+              <Icons.github className="h-[1.2rem] w-[1.2rem]" />
               <span className="sr-only">Github icon</span>
             </Button>
           </Link>

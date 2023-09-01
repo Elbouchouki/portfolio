@@ -8,8 +8,9 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import DownloadButton from "../ui/download-button"
+import DownloadButton from "../download-button"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 interface HeadingSectionProps {
   className?: string
@@ -22,7 +23,13 @@ const Heading = ({ className }: HeadingSectionProps) => {
         <Dialog>
           <DialogTrigger>
             <Avatar className="transition-all delay-100 rotate-0 rounded-lg w-36 h-36 hover:scale-105 sm:rotate-2 hover:-rotate-2">
-              <AvatarImage src={appConfig.picture} />
+              <Image
+                width={512}
+                height={512}
+                src={appConfig.picture}
+                alt="Elbouchouki"
+                className="absolute inset-0 object-cover w-full h-full rounded-lg"
+              />
               <AvatarFallback className="rounded-lg">
                 <Skeleton className="w-full h-full" />
               </AvatarFallback>
@@ -31,10 +38,16 @@ const Heading = ({ className }: HeadingSectionProps) => {
           <DialogContent>
             <div className="flex items-end justify-end w-full h-full">
               <Avatar className="w-full h-full rounded-lg">
-                <AvatarImage src={appConfig.picture} />
-                <AvatarFallback className="rounded-lg">
+                <Image
+                  width={512}
+                  height={512}
+                  src={appConfig.picture}
+                  alt="Elbouchouki"
+                  className="inset-0 object-cover w-full h-full rounded-lg bg-red-300"
+                />
+                <div className="absolute rounded-lg">
                   <Skeleton className="w-full h-full" />
-                </AvatarFallback>
+                </div>
               </Avatar>
               <DownloadButton
                 size="sm"
@@ -42,7 +55,7 @@ const Heading = ({ className }: HeadingSectionProps) => {
                 defaultText="Download picture"
                 downloadedText="Picture downloaded"
                 filename="elbouchouki_picture.png"
-                filepath="/img/elbouchouki.png"
+                filepath={appConfig.picture}
                 redownloadText="Redownload picture"
               />
             </div>
@@ -57,7 +70,9 @@ const Heading = ({ className }: HeadingSectionProps) => {
           {appConfig.currentRole.name}
         </h3>
         {appConfig.currentRole.showLocation &&
-          <span>{` @ `}<Link target="_blank" className="font-semibold text-link hover:underline" href={appConfig.currentRole.link}>{appConfig.currentRole.location}</Link></span>
+          <span>{` @ `}<Link target="_blank" className="font-semibold text-link hover:underline" href={appConfig.currentRole.link}>{appConfig.currentRole.location}
+          </Link>
+          </span>
         }
       </div>
     </div>

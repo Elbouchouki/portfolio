@@ -1,14 +1,15 @@
-import { HeadingSection, Heading } from "@/components/about";
-import GwenodIcon from "@/components/logo/gwenod";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import BioItem from "@/components/ui/bio-item";
-import DownloadButton from "@/components/ui/download-button";
-import PageWrapper from "@/components/ui/page-wrapper";
+import BioItem from "@/components/home/bio-item";
+import DownloadButton from "@/components/download-button";
+import PageWrapper from "@/components/page-wrapper";
 import { Skeleton } from "@/components/ui/skeleton";
-import SocialIcons from "@/components/ui/social-icons";
-import WorkItem from "@/components/ui/work-item";
+import SocialIcons from "@/components/social-icons";
+import WorkItem from "@/components/home/work-item";
 import { Metadata } from "next";
 import Link from "next/link";
+import HeadingSection from "@/components/home/heading-section";
+import Heading from "@/components/home/heading";
+import { Icons } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: 'Home | Elbouchouki Ahmed',
@@ -40,12 +41,7 @@ export default function Home() {
             href="https://www.enset-media.ac.ma/"
             target="_blank">
             ENSET Mohammedia
-          </Link>, I am passionate about web development and I am always looking to learn new technologies and improve my skills. I am a currently a liferay developer at <Link
-            className="font-semibold text-link hover:underline"
-            href="https://www.gwenod.ma/"
-            target="_blank">
-            GWENOD
-          </Link>.
+          </Link>, I am passionate about web development and I am always looking to learn new technologies and improve my skills.
         </HeadingSection>
         <HeadingSection title="Bio" className="flex flex-col space-y-1">
           <BioItem date="2001" >
@@ -81,13 +77,13 @@ export default function Home() {
           <WorkItem
             company="GWENOD"
             jobTitle="Liferay Developer"
-            from="July 2021"
-            to="Present"
+            from="Jul 2023"
+            to="Aug 2023"
             badge="Internship"
             href="https://gwenod.ma/"
             icon={
               <Avatar className="w-16 h-16 p-2 transition-all delay-100 rounded-lg hover:p-3 ">
-                <GwenodIcon className="w-full h-full aspect-square" />
+                <Icons.gwenod className="w-full h-full aspect-square" />
                 <AvatarFallback className="rounded-lg">
                   <Skeleton className="w-full h-full" />
                 </AvatarFallback>
@@ -97,7 +93,7 @@ export default function Home() {
           <WorkItem
             company="MOAJ"
             jobTitle="Full-stack Developer"
-            from="July 2022"
+            from="Jul 2022"
             href="https://moaj.info/"
             badge="Internship"
             icon={
@@ -112,7 +108,7 @@ export default function Home() {
           <WorkItem
             company="Flouka"
             jobTitle="Mobile Developer"
-            from="June 2021"
+            from="Jun 2021"
             badge="Internship"
             href="https://moaj.info/"
             icon={

@@ -1,11 +1,11 @@
-import './globals.css'
+import '@/styles/globals.css'
 import { Josefin_Sans, Maven_Pro } from 'next/font/google'
 import { ThemeProvider } from "@/components/provider/theme-provider"
-import Navbar from '@/components/ui/navbar'
 import { cn } from '@/lib/utils'
-import Footer from '@/components/ui/footer'
 import { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
+import Footer from '@/components/layout/footer'
+import Navbar from '@/components/layout/navbar'
 
 const mainFont = Josefin_Sans({
   subsets: ["latin"],
@@ -44,7 +44,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en"
+      suppressHydrationWarning
+    >
       <body
         className={cn(
           mainFont.className,
